@@ -1,0 +1,81 @@
+﻿  Block.cpp
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(71,20): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(77,20): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(87,19): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(92,19): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(99,17): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(100,49): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(101,37): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(102,44): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Input.h(118,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\GameObject.h(149,24): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(46,100): warning C4244: '초기화 중': 'const int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(46,117): warning C4244: '초기화 중': 'const int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(82,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(82,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(105,13): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(109,15): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(125,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(125,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Map.cpp
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(71,20): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(77,20): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(87,19): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(92,19): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(99,17): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(100,49): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(101,37): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(102,44): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Input.h(118,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\GameObject.h(149,24): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Panel.cpp
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(71,20): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(77,20): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(87,19): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(92,19): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(99,17): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(100,49): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(101,37): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(102,44): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Input.h(118,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\GameObject.h(149,24): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  TetrisGame.cpp
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(71,20): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(77,20): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(87,19): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(92,19): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(99,17): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(100,49): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(101,37): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(102,44): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Input.h(118,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\GameObject.h(149,24): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(46,100): warning C4244: '초기화 중': 'const int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(46,117): warning C4244: '초기화 중': 'const int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(82,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(82,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(105,13): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(109,15): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(125,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(125,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  main.cpp
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(71,20): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(77,20): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(87,19): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(92,19): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(99,17): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(100,49): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(101,37): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Screen.h(102,44): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Input.h(118,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\GameObject.h(149,24): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(46,100): warning C4244: '초기화 중': 'const int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(46,117): warning C4244: '초기화 중': 'const int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(82,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(82,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(105,13): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(109,15): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(125,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Block.h(125,11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  Tetris_midterm.vcxproj -> C:\Users\방찬웅\Desktop\Project\OOP\Tetris_midterm\Tetris_midterm\Debug\Tetris_midterm.exe
