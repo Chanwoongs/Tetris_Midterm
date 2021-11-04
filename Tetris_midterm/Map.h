@@ -46,9 +46,11 @@ public:
 			// 줄을 검사하여 줄이 모두 false라면 
 			if (!map[line * dim.x + i])
 			{
+				// 줄이 안차있다
 				return false;
 			}
 		}
+		// 줄이 가득 차있다
 		return true;
 	}
 
@@ -97,38 +99,51 @@ public:
 		auto height = dim.y;
 		auto width = dim.x;
 
-		// y 좌표 + 높이가 맵 높이 보다 크거나 같으면 true
+		// y 좌표 + 블럭 높이가 높이 아래면 땅에 떨어진 것
 		if (pos.y + h >= height) return true;
 
-		// 
+		// y 좌표 + 블럭 높이
 		int next = pos.y + h;
+		// 현재 블럭 가장 높은 위치보다 높게 있다면 false
 		if (next < upper) return false;
+		
 		int capacity = getCapacity();
-		for (int j = 0; j < w; j++) {
-			int i = 0;
+
+		for (int j = 0; j < w; j++) 
+		{
+			// 초기값 세팅
 			int last = -1;
-			for (i = 0; i < h; i++) {
+
+			// 블럭의 빈칸이 아니라면 last = i로 세팅
+			for (int i = 0; i < h; i++) 
+			{
 				if (shape[j + i * w] != ' ') last = i;
 			}
+
+			// 블럭의 빈칸이라면 다시 검색
 			if (last == -1) continue;
+
+			// 바로 아래 인덱스 초기화
 			auto nextOffset = pos.x + j + (pos.y + last + 1) * width;
+			// 아래 인덱스가 범위를 벗어나면
 			if (nextOffset >= capacity) return true;
+			// 아래 인덱스가 차있다면
 			if (map[nextOffset] == true) return true;
 		}
 		return false;
 	}
 
+	// map의 좌표값 체크
 	bool isOccupied(const Position& pos) {
 		return map[pos2Offset(pos)];
 	}
 
-
+	// 블럭 맵에 위치 시키기
 	void place(const char* shape, const Position& pos, int w, int h) 
 	{
 		// 스크린 좌표계로 변환
 		auto worldPos = local2Screen();
 
-		//
 		for (int i = 0; i < h; i++) 
 		{
 			for (int j = 0; j < w; j++) 
@@ -136,12 +151,14 @@ public:
 				// 모양이 빈칸이 아니라면
 				if (shape[j + i * w] != ' ') 
 				{
-					// 맵의 인덱스에 
+					// 맵의 인덱스 값 설정
 					map[pos.x + j + (pos.y + i) * dim.x] = true;
+					// 인덱스에 네모로 채우기
 					setShape(rect, { pos.x + j, pos.y + i });
 				}
 			}
 		}
+		// 위치한 곳의 y가 upper보다 높다면 upper 업데이트
 		if (pos.y < upper) upper = pos.y;
 	}
 
@@ -155,11 +172,13 @@ public:
 		auto width = dim.x;
 
 		// map칸이 true 이면 네모로 채우고, 아니라면 빈칸으로 그리기
-		for (int i = upper - 2; i < height; i++) {
+		for (int i = upper - 2; i < height; i++) 
+		{
 			for (int j = 0; j < width; j++) {
 				setShape(map[j + i * width] ? rect : ' ', j + i * width);
 			}
 		}
+		// 자기 자신 그리기
 		GameObject::draw();
 	}
 };

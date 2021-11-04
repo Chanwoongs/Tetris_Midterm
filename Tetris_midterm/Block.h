@@ -2,8 +2,7 @@
 
 #include "Map.h"
 
-class Block :
-	public GameObject
+class Block : public GameObject
 {
 	bool		interactable; /* indicator whether it can respond with user input events.*/
 	float		currentX;
@@ -66,12 +65,16 @@ public:
 		// 땅에 떨어 졌다면
 		if (map->isGrounded(shape, pos, width, height)) 
 		{
-			// 
+			// map에 위치 시킨다
 			map->place(shape, pos, width, height);
 
-			for (int i = height - 1; i >= 0; --i) {
+			// 모든 라인이 찼는지 확인하고 없앤다
+			for (int i = height - 1; i >= 0; --i) 
+			{
 				int nCombos = 0;
-				while (map->evaluateLine(pos.y + i)) {
+				while (map->evaluateLine(pos.y + i)) 
+				{
+					// 몇 라인이 지워졌는지
 					nCombos++;
 				}
 			}
@@ -79,32 +82,43 @@ public:
 			/* reuse the block. */
 			currentX = 4.0f; currentY = 0.0f;
 			speed = 0.1f;
+			// 블럭 위치 초기화
 			setPos(currentX, currentY); // update location from float to integer			
 			//setActive(false);
 			return;
 		}
 
+		// Right 키로 블럭 오른쪽으로 한 칸 이동
 		if (input->getKey(VK_RIGHT)) {
 			float nextX = currentX + 1;
+			// 범위를 벗어난다면 이동 불가
 			if (map && map->isValidRange({ (int)nextX, (int)currentY }, dim))
 				currentX = nextX;
 		}
+		// Left 키로 블럭 왼쪽으로 한 칸 이동
 		if (input->getKey(VK_LEFT)) {
 			float nextX = currentX - 1;
+			// 범위를 벗어난다면 이동 불가
 			if (map && map->isValidRange({ (int)nextX, (int)currentY }, dim))
 				currentX = nextX;
 		}
+		// Up 키로 블럭 돌리기
 		if (input->getKey(VK_UP)) {
 			rotateShape();
 		}
+		// Down 키로 스피드 2배 증가
 		if (input->getKey(VK_DOWN)) {
 			speed *= 2;
 		}
+		// Space 키로 블럭 한번에 내리기
 		if (input->getKey(VK_SPACE)) {
 			if (map) {
 				pos.y = currentY;
+				// 블럭이 땅에 닿을 때 까지
 				while (!map->isGrounded(shape, pos, width, height)) {
+					// 블럭의 다음 y 위치 세팅
 					float nextY = currentY + 1;
+					// 블럭이 갈 수 있는 범위라면 다음 위치로 옮긴다
 					if (map->isValidRange({ (int)currentX, (int)nextY }, dim)) {
 						pos.y = nextY;
 						currentY = nextY;
@@ -113,28 +127,45 @@ public:
 				return;
 			}
 		}
+		// 블럭 다음 y 위치 세팅
 		float nextY = currentY + speed;
-		if (map && map->isValidRange({ (int)currentX, (int)nextY }, dim)) {
+
+		// 블럭이 갈 수 있는 범위라면 다음 위치로 옮긴다 
+		if (map && map->isValidRange({ (int)currentX, (int)nextY }, dim)) 
+		{
 			currentY = nextY;
 		}
 	}
 
+	// 블럭 그리기
 	void draw() override
 	{
-		if (interactable == true) {
+		// 상호작용 가능한 블럭이라면
+		if (interactable == true)
+		{
+			// 위치를 현재 위치로
 			setPos(currentX, currentY);
 		}
 		auto shape = getShape();
 		auto pos = getPos();
 		auto width = dim.x;
 		auto height = dim.y;
+
+		// 블럭이 땅에 떨어져 있지 않다면
 		if (!map->isGrounded(shape, pos, width, height))
+		{
+			// 스크린에 그리기
 			screen->draw(local2Screen(), getShape(), dim);
+		}
 	}
 
+	// 맵 초기화
 	void setMap(Map* map) {
 		this->map = map;
 	}
 
-	void setInteractable(bool interactable = true) { this->interactable = interactable; }
+	// 상호작용 초기화
+	void setInteractable(bool interactable = true) {
+		this->interactable = interactable; 
+	}
 };
