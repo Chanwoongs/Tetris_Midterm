@@ -46,7 +46,7 @@ protected:
 	}
 
 public:
-	// 생성자		모양				위치					공간					부모
+	// 생성자		모양				위치					공간			hierarchy부모
 	GameObject(const char* face, const Position& pos, const Dimension& dim, GameObject* parent = nullptr)
 		//	위치	공간			용량 ( X x Y )
 		: pos(pos), dim(dim), capacity((size_t)dim.x* dim.y),
@@ -54,7 +54,7 @@ public:
 		shape{ new char[(size_t)dim.x * dim.y] }, active(true),
 		//		스크린							입력				포지션 변화
 		screen(Screen::GetInstance()), input(Input::GetInstance()), dirty(false),
-		//	부모			부모가 있다면 부모의 포지션을 월드포지션으로, 없다면 (0,0)	
+		//hierarchy부모			부모가 있다면 부모의 포지션을 월드포지션으로, 없다면 (0,0)	
 		parent(parent), parentWorldPos(parent ? parent->local2Screen() : Position::zeros)
 	{
 		//	부모가 있다면 자식으로 이 객체를 삽입
@@ -198,6 +198,7 @@ public:
 		// 자식들 전부 업데이트
 		for (auto child : children) child->internalUpdate();
 	}
+	// 만약 isPaused라면 필요한것만 업데이트되게
 	// 자신 업데이트
 	virtual void update() {}
 

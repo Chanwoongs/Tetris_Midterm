@@ -85,6 +85,7 @@ public:
 			// 블럭 위치 초기화
 			setPos(currentX, currentY); // update location from float to integer			
 			//setActive(false);
+
 			return;
 		}
 

@@ -141,6 +141,8 @@
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Borland.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Confirmation.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
@@ -154,6 +156,8 @@
   <ItemGroup>
     <ClInclude Include="Block.h" />
     <ClInclude Include="Borland.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="Confirmation.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Map.h" />
