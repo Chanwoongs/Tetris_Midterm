@@ -60,6 +60,7 @@ public:
         // ESC 키를 누르면 confirmation 생성
         if (input->getKey(VK_ESCAPE))
         {
+            confirmation->setActive(true);
             
         }
     }
