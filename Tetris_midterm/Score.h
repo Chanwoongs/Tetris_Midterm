@@ -29,5 +29,4 @@ public:
 
 	// 스코어 값 가져오기
 	int getValue() const { return value; }
-};
-                                   
+};                              

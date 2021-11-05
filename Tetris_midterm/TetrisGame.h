@@ -41,7 +41,7 @@ public:
         map->setScore(score);
         // 블럭을 맵에 세팅
         block->setMap(map);
-
+        // 퍼즈 생성
         confirmation = new Confirmation(Position{ 30, 12 }, 20, 5, this);
     }
 
@@ -61,7 +61,6 @@ public:
         if (input->getKey(VK_ESCAPE))
         {
             confirmation->setActive(true);
-            
         }
     }
 };

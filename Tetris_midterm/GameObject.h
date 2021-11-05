@@ -21,6 +21,7 @@ private:
 	Position			parentWorldPos;	// "absolute" position of its parent game object to the screen 
 	bool				active;	// indicator whether it is being served by the update/render logic
 									// if "false", it should not be served by the game engine.
+	bool				isPaused;
 
 protected:
 
@@ -51,7 +52,7 @@ public:
 		//	위치	공간			용량 ( X x Y )
 		: pos(pos), dim(dim), capacity((size_t)dim.x* dim.y),
 		//		모양 [ X x Y ]						활성화
-		shape{ new char[(size_t)dim.x * dim.y] }, active(true),
+		shape{ new char[(size_t)dim.x * dim.y] }, active(true), isPaused(false),
 		//		스크린							입력				포지션 변화
 		screen(Screen::GetInstance()), input(Input::GetInstance()), dirty(false),
 		//hierarchy부모			부모가 있다면 부모의 포지션을 월드포지션으로, 없다면 (0,0)	
@@ -157,6 +158,17 @@ public:
 	}
 	// 모양세팅 (char, const Position&)
 	void setShape(char shape, const Position& pos) { setShape(shape, pos2Offset(pos)); }
+
+	// 게임 일시정지 플래그 가져오기
+	bool getIsPaused()
+	{
+		return isPaused;
+	}
+	// 게임 일시정지 플래그 설정
+	void setIsPaused(bool isPaused) 
+	{
+		this->isPaused = isPaused;
+	}
 
 	// 좌표 업데이트
 	void updatePos(bool dirty = false) {
