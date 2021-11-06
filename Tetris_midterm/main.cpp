@@ -18,6 +18,13 @@ int main()
 	auto screen = Screen::GetInstance();
 	auto input = Input::GetInstance();
 	auto tetris = new TetrisGame;
+	
+	Position p1{ 1,2 };
+	Position p2{ 2,3 };
+
+	p1 += p2;
+
+	auto p3 = 3 * (p1 + p2) - p2 * 2;  
 
 	while (tetris->isGameOver() == false)
 	{

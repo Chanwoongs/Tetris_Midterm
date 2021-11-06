@@ -122,12 +122,12 @@ public:
 	// 스크린 좌표계에서 지역 좌표계로
 	Position screen2local(const Position& screenPos) const {
 		Position pos = local2Screen();
-		return Position{ screenPos.x - pos.x, screenPos.y - pos.y };
+		return Position{ screenPos - pos };
 	}
 
 	// 지역 좌표계에서 스크린 좌표계로
 	Position local2Screen(const Position& pos) const {
-		return { parentWorldPos.x + pos.x, parentWorldPos.y + pos.y };
+		return { parentWorldPos + pos };
 	}
 
 	// 지역 좌표계에서 스크린 좌표계로
@@ -205,7 +205,7 @@ public:
 		// 자식들 전부 그리기
 		for (auto child : children) child->internalDraw();
 	}
-	//  자신 그리기
+	// 자신 그리기
 	virtual void draw() { screen->draw(local2Screen(), shape, dim); }
 
 	// 전부 업데이트
@@ -216,10 +216,7 @@ public:
 		if (parent)
 		{
 			// 부모의 일시정지 여부를 Child에게 세팅
-			for (auto child : children)
-			{
-				child->setIsPaused(parent->getIsPaused());
-			}
+			for (auto child : children)	child->setIsPaused(parent->getIsPaused());
 		}
 		// 일시정지 중 UI가 아니라면 update 하지 않음
 		if (isPaused && tag != "UI") return;
@@ -228,7 +225,6 @@ public:
 		// 자식들 전부 업데이트
 		for (auto child : children) child->internalUpdate();
 	}
-	// 만약 isPaused라면 필요한것만 업데이트되게
 	// 자신 업데이트
 	virtual void update() {}
 
