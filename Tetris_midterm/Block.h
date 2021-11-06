@@ -39,10 +39,10 @@ class Block : public GameObject
 	}
 
 public:
-	//				모양			위치					공간					부모					상호작용 가능
-	Block(const string& shape, const Position& pos, const Position& dim, GameObject* parent = nullptr, bool interactable = true)
+	//				모양			위치					공간				태그				부모					상호작용 가능
+	Block(const string& shape, const Position& pos, const Position& dim, const string& tag, GameObject* parent = nullptr, bool interactable = true)
 	//	 게임오브젝트 const char*								상호작용				맵				좌표X			좌표Y		  속도							모양
-		: GameObject(shape.c_str(), pos, dim, parent), interactable(interactable), map(nullptr), currentX(pos.x), currentY(pos.y), speed(0.1f), shapeBuffer{ new char[(size_t)dim.x * dim.y] }
+		: GameObject(shape.c_str(), pos, dim, tag, parent), interactable(interactable), map(nullptr), currentX(pos.x), currentY(pos.y), speed(0.1f), shapeBuffer{new char[(size_t)dim.x * dim.y]}
 	{}
 
 	~Block() {

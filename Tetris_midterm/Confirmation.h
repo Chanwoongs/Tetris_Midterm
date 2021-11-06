@@ -4,28 +4,35 @@
 
 class Confirmation : public Panel
 {
-	Button* exitButton;
-	Button* resumeButton;
+	Button* exitBtn;
+	Button* continueBtn;
 public:
-	Confirmation(const Position& pos, int width, int height, GameObject* parent)
-		: Panel("", pos, width, height, parent)
+	Confirmation(const Position& pos, int width, int height, const string& tag, GameObject* parent)
+		: Panel("", pos, width, height, tag, parent)
 	{
 		// 비활성화 상태로 초기화
 		this->setActive(false);
-		exitButton = new Button(Position{ 1, 1 }, 8, 3, this);
-		resumeButton = new Button(Position{ 11, 1 }, 8, 3, this);
+		// Exit 버튼 생성
+		exitBtn = new Button("Exit", Position{1, 1}, 8, 3, "UI", this);
+		// Continue 버튼 생성
+		continueBtn = new Button("Continue", Position{11, 1}, 8, 3, "UI", this);
 	}
 	~Confirmation() {}
 
 	void update() override
 	{
-		if (exitButton->onClick())
+		// Exit 버튼 클릭 시 게임 종료
+		if (exitBtn->onClick())
 		{
 			exit(0);
 		}
-		if (resumeButton->onClick())
+		// Continue 버튼 클릭 시 게임 재개
+		if (continueBtn->onClick())
 		{
-			this->setActive(false);
+			// TetrisGame에게 게임 재개 알림
+			parent->setIsPaused(false);
+			// 일시중지 창 끄기
+			setActive(false);
 		}
 	}
 
@@ -34,7 +41,5 @@ public:
 	{
 		// 테두리를 먼저 그린다
 		Panel::draw();
-		// 자기 자신 그리기
-		GameObject::draw();
 	}
 };

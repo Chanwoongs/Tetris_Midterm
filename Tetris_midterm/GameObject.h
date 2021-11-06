@@ -21,6 +21,7 @@ private:
 	Position			parentWorldPos;	// "absolute" position of its parent game object to the screen 
 	bool				active;	// indicator whether it is being served by the update/render logic
 									// if "false", it should not be served by the game engine.
+	string				tag;
 	bool				isPaused;
 
 protected:
@@ -47,12 +48,12 @@ protected:
 	}
 
 public:
-	// 생성자		모양				위치					공간			hierarchy부모
-	GameObject(const char* face, const Position& pos, const Dimension& dim, GameObject* parent = nullptr)
+	// 생성자		모양				위치					공간			태그					hierarchy부모
+	GameObject(const char* face, const Position& pos, const Dimension& dim, const string& tag, GameObject* parent = nullptr)
 		//	위치	공간			용량 ( X x Y )
 		: pos(pos), dim(dim), capacity((size_t)dim.x* dim.y),
-		//		모양 [ X x Y ]						활성화
-		shape{ new char[(size_t)dim.x * dim.y] }, active(true), isPaused(false),
+		//		모양 [ X x Y ]						활성화			멈춤 여부		태그
+		shape{ new char[(size_t)dim.x * dim.y] }, active(true), isPaused(false), tag(tag),
 		//		스크린							입력				포지션 변화
 		screen(Screen::GetInstance()), input(Input::GetInstance()), dirty(false),
 		//hierarchy부모			부모가 있다면 부모의 포지션을 월드포지션으로, 없다면 (0,0)	
@@ -160,7 +161,7 @@ public:
 	void setShape(char shape, const Position& pos) { setShape(shape, pos2Offset(pos)); }
 
 	// 게임 일시정지 플래그 가져오기
-	bool getIsPaused()
+	bool getIsPaused() const
 	{
 		return isPaused;
 	}
@@ -168,6 +169,12 @@ public:
 	void setIsPaused(bool isPaused) 
 	{
 		this->isPaused = isPaused;
+	}
+
+	// Tag 가져오기
+	string getTag() const
+	{
+		return tag;
 	}
 
 	// 좌표 업데이트
@@ -205,6 +212,17 @@ public:
 	void internalUpdate() {
 		// 비활성화 되어 있다면 업데이트 하기 않기
 		if (active == false) return;
+		// 부모가 있다면
+		if (parent)
+		{
+			// 부모의 일시정지 여부를 Child에게 세팅
+			for (auto child : children)
+			{
+				child->setIsPaused(parent->getIsPaused());
+			}
+		}
+		// 일시정지 중 UI가 아니라면 update 하지 않음
+		if (isPaused && tag != "UI") return;
 		// 자기 자신 업데이트
 		update();
 		// 자식들 전부 업데이트

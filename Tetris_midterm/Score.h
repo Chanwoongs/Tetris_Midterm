@@ -9,7 +9,7 @@ class Score : public GameObject
 public:
 	//			위치				   부모
 	Score(const Position& pos, GameObject* parent)
-		: GameObject("0", pos, Dimension{ 3, 1 }, parent), value(0)
+		: GameObject("0", pos, Dimension{ 3, 1 }, "", parent), value(0)
 	{
 		// value 값을 buffer에 저장
 		sprintf(buffer, "%3d", value % 1000);

@@ -12,10 +12,10 @@ class Map : public Panel {
 
 public:
 	//			위치			가로		세로			부모
-	Map(const Position& pos, int width, int height, GameObject* parent)
+	Map(const Position& pos, int width, int height, const string& tag, GameObject* parent)
 		//				bool형 맵 초기화		현재 가장 높은 위치
 		: map(new bool[(size_t)width * height]), upper(height - 1),
-		Panel("", pos, width, height, parent), score(nullptr)
+		Panel("", pos, width, height, tag, parent), score(nullptr)
 	{
 		// 맵 초기화
 		for (int i = 0; i < width * height; i++)

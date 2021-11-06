@@ -6,8 +6,8 @@ class Panel : public GameObject
 
 public:
 	//			제목					위치			가로		세로		부모
-	Panel(const string& title, const Position& pos, int width, int height, GameObject* parent)
-		: GameObject("", pos, Dimension{ width, height }, parent), title(title)
+	Panel(const string& title, const Position& pos, int width, int height, const string& tag, GameObject* parent)
+		: GameObject("", pos, Dimension{ width, height }, tag, parent), title(title)
 	{}
 	// 패널 그리기
 	void draw() override
