@@ -1,12 +1,15 @@
 #pragma once
 #include <iostream>
+#include <fstream>
 #include "Panel.h"
 #include "Score.h"
+using namespace std;
 
 class Map : public Panel {
 	bool*		map;
 	int			upper;
 	Score*		score;
+	ifstream	fin;
 
 	static const char rect = '\xdb';
 
@@ -14,16 +17,38 @@ public:
 	//			위치			가로		세로			부모
 	Map(const Position& pos, int width, int height, const string& tag, GameObject* parent)
 		//				bool형 맵 초기화		현재 가장 높은 위치
-		: map(new bool[(size_t)width * height]), upper(height - 1),
+		: map(new bool[(size_t)width * height]),  upper(height - 1),
 		Panel("", pos, width, height, tag, parent), score(nullptr)
 	{
-		// 맵 초기화
-		for (int i = 0; i < width * height; i++)
+		// 파일 열기
+		fin.open("C:\\Users\\방찬웅\\Desktop\\Project\\OOP\\Tetris_midterm\\CustomMap.txt");
+
+		if (fin)
 		{
-			map[i] = false;
+			char* temp = new char[(size_t)width * height];
+			fin >> temp;
+			
+			for (int i = 0; i < width * height; i++)
+			{
+				map[i] = temp[i] - 48;
+			}
+			delete[] temp;
+		}	
+		else
+		{
+			// 맵 초기화
+			for (int i = 0; i < width * height; i++)
+			{
+				map[i] = false;
+			}
 		}
+		// 파일 닫기
+		fin.close();
 	}
-	~Map() { if (map) delete[] map; }
+	~Map() 
+	{ 
+		if (map) delete[] map;
+	}
 
 	// 스코어 세팅
 	void setScore(Score* score) {

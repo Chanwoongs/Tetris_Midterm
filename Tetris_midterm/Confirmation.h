@@ -37,7 +37,7 @@ public:
 	}
 
 	// 창 그리기
-	void draw()
+	void draw() override
 	{
 		// 테두리를 먼저 그린다
 		Panel::draw();

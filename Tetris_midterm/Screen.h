@@ -119,7 +119,7 @@ public:
 			draw(pos.x, i, 186);
 		}
 	}
-	// 사각형 그리기
+	// 사각형 그리기dedd
 	void drawRectangle(const Position& topLeft, const Dimension& sz) {
 		drawLineHorizontal(topLeft, sz.x);
 		drawLineHorizontal(Position{ topLeft.x, topLeft.y + sz.y }, sz.x);
