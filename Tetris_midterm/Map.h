@@ -14,7 +14,7 @@ class Map : public Panel {
 	static const char rect = '\xdb';
 
 public:
-	//			위치			가로		세로			부모
+	//			위치			가로		세로			태그			부모
 	Map(const Position& pos, int width, int height, const string& tag, GameObject* parent)
 		//				bool형 맵 초기화		현재 가장 높은 위치
 		: map(new bool[(size_t)width * height]),  upper(height - 1),
@@ -23,23 +23,26 @@ public:
 		// 파일 열기
 		fin.open("C:\\Users\\방찬웅\\Desktop\\Project\\OOP\\Tetris_midterm\\CustomMap.txt");
 
+		// 파일 열기 성공 했다면
 		if (fin)
 		{
-			char* temp = new char[(size_t)width * height];
+			// 저장 할 임시 변수
+			string temp;
+			// 파일 내용 복사
 			fin >> temp;
-			
+
+			// 파일 내용 map에 대입
 			for (int i = 0; i < width * height; i++)
 			{
 				map[i] = temp[i] - 48;
 			}
-			delete[] temp;
-		}	
+		}
 		else
 		{
 			// 맵 초기화
 			for (int i = 0; i < width * height; i++)
 			{
-				map[i] = false;
+				map[i] = true;
 			}
 		}
 		// 파일 닫기
@@ -148,7 +151,7 @@ public:
 			// 블럭의 빈칸이라면 다시 검색
 			if (last == -1) continue;
 
-			// 바로 아래 인덱스 초기화
+			// 바로 아래 인덱스 값 설정
 			auto nextOffset = pos.x + j + (pos.y + last + 1) * width;
 			// 아래 인덱스가 범위를 벗어나면
 			if (nextOffset >= capacity) return true;
@@ -197,7 +200,7 @@ public:
 		auto width = dim.x;
 
 		// map칸이 true 이면 네모로 채우고, 아니라면 빈칸으로 그리기
-		for (int i = upper - 2; i < height; i++) 
+		for (int i = 0; i < height; i++) 
 		{
 			for (int j = 0; j < width; j++) {
 				setShape(map[j + i * width] ? rect : ' ', j + i * width);

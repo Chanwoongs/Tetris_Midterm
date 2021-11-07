@@ -1,28 +1,28 @@
 #include<iostream>
 #include<fstream>
+#include<string>
+#include"Screen.h"
+#include"Input.h"
+#include"MapEditor.h"
 using namespace std;
 
 int main()
 {
-	bool isLooping = true;
-	// 파일 생성
-	ofstream fout("C:\\Users\\방찬웅\\Desktop\\Project\\OOP\\Tetris_midterm\\CustomMap.txt");
-	// 맵 생성
-	char map[200];
-	// 맵 초기화
-	for (int i = 0; i < 200; i++)
+	auto screen = Screen::GetInstance();
+	auto input = Input::GetInstance();
+	auto editor = new MapEditor;	
+
+	while (!editor->isDone())
 	{
-		map[i] = '0';
-	}
+		screen->clear();
+		input->readInputs();
 
-	// 예외 처리
-	if (!fout)
-	{
-		cout << "Can not open file!\n";
-	}
+		editor->internalUpdate();
+		editor->updatePos(false); // the location of the root game object won't be changed.
+		editor->internalDraw();
 
-	// map 쓰기
-	fout << map << endl;
+		screen->render();
 
-	fout.close();
+		Sleep(100);
+	}	
 }

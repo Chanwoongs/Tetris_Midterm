@@ -19,10 +19,10 @@ public:
         : Panel("", Position{ 1, 1 }, 77, 30, "UI", nullptr),
         isCompleted(false), score(nullptr), confirmation(nullptr)
     {
-        // 맵 공간 만듬
+        // 맵 공간 만듦
         map = new Map{ Position{5,5}, 10, 20, "map", this };
 
-        // 맵 안에 블럭 만듬
+        // 맵 안에 블럭 만듦
         auto block = new Block{ " \xdb \xdb\xdb\xdb",
             Position{5,0},
             Dimension{3, 2},
@@ -35,7 +35,7 @@ public:
 
         // 스코어
         score = new Score{ Position{4, 2},
-            // 스코어 패널 만듬
+            // 스코어 패널 만듦
             new Panel{ " Score", Position{25, 20}, 10, 5, "UI", this}
         }; // create a ScorePanel and make a "score" its child.
         // 스코어 세팅
