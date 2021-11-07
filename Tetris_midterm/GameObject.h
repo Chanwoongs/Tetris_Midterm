@@ -212,6 +212,8 @@ public:
 	void internalUpdate() {
 		// 비활성화 되어 있다면 업데이트 하기 않기
 		if (active == false) return;
+
+		/* 첫번째 시도 : 자식들의 isPaused를 모두 부모의 isPaused로 변경하는 로직
 		// 부모가 있다면
 		if (parent)
 		{
@@ -220,6 +222,11 @@ public:
 		}
 		// 일시정지 중 UI가 아니라면 update 하지 않음
 		if (isPaused && tag != "UI") return;
+		*/
+
+		// 게임이 멈춘 상태에서, 부모가 있고, 태그가 UI 라면 그것만 업데이트 시킨다           
+		if (parent && parent->getIsPaused() && tag != "UI") return;
+		
 		// 자기 자신 업데이트
 		update();
 		// 자식들 전부 업데이트
