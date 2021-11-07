@@ -11,6 +11,7 @@ class TetrisGame : public Panel
     bool        isCompleted;
     Score*      score;  // cache
     Map*        map;    // cache
+    Block*      block;
     Confirmation* confirmation;
 
 public:
@@ -23,7 +24,7 @@ public:
         map = new Map{ Position{5,5}, 10, 20, "map", this };
 
         // 맵 안에 블럭 만듦
-        auto block = new Block{ " \xdb \xdb\xdb\xdb",
+        block = new Block{ " \xdb \xdb\xdb\xdb",
             Position{5,0},
             Dimension{3, 2},
             "block",
@@ -67,5 +68,13 @@ public:
             // 게임 일시중지
             setIsPaused(true);
         }    
+        // 블럭이 비활성화 된다면
+        if (!block->isActive())
+        {
+            // 블럭 초기화
+            block->initializeBlock();
+            // 블럭 활성화
+            block->setActive(true);
+        }
     }
 };

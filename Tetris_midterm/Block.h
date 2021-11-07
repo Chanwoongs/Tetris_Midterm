@@ -50,6 +50,15 @@ public:
 		shapeBuffer = nullptr;
 	}
 
+	// 블럭 초기 상태
+	void initializeBlock()
+	{
+		currentX = 4.0f; currentY = 0.0f;
+		speed = 0.1f;
+		// 블럭 위치 초기화
+		setPos(currentX, currentY); // update location from float to integer	
+	}
+
 	// 블럭 업데이트
 	void update() override
 	{
@@ -79,12 +88,8 @@ public:
 				}
 			}
 
-			/* reuse the block. */
-			currentX = 4.0f; currentY = 0.0f;
-			speed = 0.1f;
-			// 블럭 위치 초기화
-			setPos(currentX, currentY); // update location from float to integer			
-			//setActive(false);
+			// 블럭 비활성화	
+			setActive(false);
 
 			return;
 		}
