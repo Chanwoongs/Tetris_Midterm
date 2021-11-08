@@ -21,7 +21,7 @@ public:
 		Panel("", pos, width, height, tag, parent), score(nullptr)
 	{
 		// 파일 열기
-		fin.open("C:\\Users\\방찬웅\\Desktop\\Project\\OOP\\Tetris_midterm\\CustomMap.txt");
+		fin.open("C:\\Users\\방찬웅\\Desktop\\Project\\OOP\\Tetris_midterm\\Custom.txt");
 
 		// 파일 열기 성공 했다면
 		if (fin)
@@ -36,13 +36,23 @@ public:
 			{
 				map[i] = temp[i] - 48;
 			}
+			// 커스텀 맵의 upper 값 설정
+			for (int i = 0; i < width * height; i++)
+			{
+				if (map[i])
+				{
+					Position pos = offset2Pos(i);
+					this->upper = pos.y;
+					break;
+				}
+			}
 		}
-		else
+		else if (!fin)
 		{
 			// 맵 초기화
 			for (int i = 0; i < width * height; i++)
 			{
-				map[i] = true;
+				map[i] = false;
 			}
 		}
 		// 파일 닫기
@@ -132,7 +142,7 @@ public:
 
 		// y 좌표 + 블럭 높이
 		int next = pos.y + h;
-		// 현재 블럭 가장 높은 위치보다 높게 있다면 false
+		// 현재 블럭 가장 높은 위치보다 높은 위치에 있다면 false
 		if (next < upper) return false;
 		
 		int capacity = getCapacity();
